@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Homes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation du menu burger */
+        .burger div {
+            transition: all 0.3s ease-in-out;
+        }
+        .burger:hover div:first-child {
+            transform: translateX(-2px);
+        }
+        .burger:hover div:last-child {
+            transform: translateX(2px);
+        }
+
+        /* Animation de déplacement doux */
+        @keyframes moveImage {
+            0% { transform: translateX(0) scale(1.1); }
+            50% { transform: translateX(-5px) scale(1.1); }
+            100% { transform: translateX(5px) scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-sans">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center px-6 py-4 md:px-10 lg:px-20">
+        <div class="text-2xl md:text-3xl font-bold">Mh</div>
+        <div class="burger flex flex-col gap-1 cursor-pointer" onclick="toggleMenu()">
+            <div class="w-6 h-[2px] bg-black"></div>
+            <div class="w-4 h-[2px] bg-black self-end"></div>
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav class="menu z-40 fixed top-0 right-[-100%] w-full h-full bg-black text-white flex flex-col justify-center items-end pr-6 transition-all duration-500 ease-in-out" id="menu">
+        <div class="text-4xl font-bold mb-6 cursor-pointer absolute top-4 right-4" onclick="toggleMenu()">&times;</div>
+        <ul class="text-2xl space-y-4 text-right md:text-5xl md:space-y-8">
+            <li class="cursor-pointer">North of TO</li>
+            <li class="cursor-pointer">East of LA</li>
+            <li class="cursor-pointer">Process</li>
+            <li class="cursor-pointer">About</li>
+            <li class="cursor-pointer">Contact</li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="px-6 md:px-20 lg:px-32 py-16 md:py-24 text-center md:text-left">
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+            Modern, environmentally <br class="hidden md:block"> conscious homes.
+        </h1>
+    </main>
+
+    <!-- Slideshow avec un cadre fixe -->
+    <div class="w-full md:w-2/3 h-64 md:h-96 flex justify-center items-center bg-gray-200 ml-auto">
+        <div class="slideshow w-full h-full relative overflow-hidden">
+            <img src="https://plus.unsplash.com/premium_photo-1742945845688-d2e666a3b92a?w=500&auto=format&fit=crop&q=60" class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out active">
+            <img src="https://images.unsplash.com/photo-1743044090376-f770fee7e859?w=500&auto=format&fit=crop&q=60" class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out">
+            <img src="https://images.unsplash.com/photo-1742268350465-35d7baae61fa?w=500&auto=format&fit=crop&q=60" class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out">
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("right-0");
+        }
+
+        // Gestion du slideshow
+        const images = document.querySelectorAll('.slideshow img');
+        let index = 0;
+
+        function changeImage() {
+            images[index].classList.remove('opacity-100');
+            images[index].classList.add('opacity-0');
+            index = (index + 1) % images.length;
+            images[index].classList.remove('opacity-0');
+            images[index].classList.add('opacity-100');
+        }
+
+        setInterval(changeImage, 5000);
+    </script>
+
+</body>
+</html>
