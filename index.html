@@ -1,88 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Homes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Animation du menu burger */
-        .burger div {
-            transition: all 0.3s ease-in-out;
-        }
-        .burger:hover div:first-child {
-            transform: translateX(-2px);
-        }
-        .burger:hover div:last-child {
-            transform: translateX(2px);
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Modern Homes</title>
+		<link href="/src/css/output.css" rel="stylesheet" />
+	</head>
+	<body class="bg-white text-black font-sans">
+		<!-- Header -->
+		<header
+			class="flex justify-between items-center px-6 py-14 md:px-10 lg:px-26 items-start fixed top-0 w-full z-50"
+		>
+			<div class="logo text-2xl md:text-5xl font-normal">Mh</div>
+			<div
+				class="burger flex flex-col gap-1 md:gap-3 cursor-pointer z-50 ml-auto"
+				onclick="toggleMenu()"
+			>
+				<div class="w-6 h-[2px] bg-black md:w-12 md:h-[3px]"></div>
+				<div
+					class="w-4 h-[2px] bg-black self-end md:w-8 md:h-[3px]"
+				></div>
+			</div>
+		</header>
 
-        /* Animation de déplacement doux */
-        @keyframes moveImage {
-            0% { transform: translateX(0) scale(1.1); }
-            50% { transform: translateX(-5px) scale(1.1); }
-            100% { transform: translateX(5px) scale(1.1); }
-        }
-    </style>
-</head>
-<body class="bg-white text-black font-sans">
+		<!-- Menu -->
+		<nav
+			class="menu z-40 fixed top-0 right-[-100%] w-full h-full bg-black text-white flex flex-col justify-center items-end pr-6 opacity-90"
+			id="menu"
+		>
+			<ul
+				class="text-2xl space-y-4 text-right md:text-5xl md:space-y-8 mr-4 md:mr-20"
+			>
+				<li class="cursor-pointer">North of TO</li>
+				<li class="cursor-pointer">East of LA</li>
+				<li class="cursor-pointer">Process</li>
+				<li class="cursor-pointer">About</li>
+				<li class="cursor-pointer">Contact</li>
+			</ul>
+		</nav>
 
-    <!-- Header -->
-    <header class="flex justify-between items-center px-6 py-4 md:px-10 lg:px-20">
-        <div class="text-2xl md:text-3xl font-bold">Mh</div>
-        <div class="burger flex flex-col gap-1 cursor-pointer" onclick="toggleMenu()">
-            <div class="w-6 h-[2px] bg-black"></div>
-            <div class="w-4 h-[2px] bg-black self-end"></div>
-        </div>
-    </header>
+		<!-- Main Content -->
+		<main
+			class="px-6 md:px-20 lg:px-26 py-16 md:py-24 md:pt-12 text-center md:text-left mt-36"
+		>
+			<h1 class="text-3xl md:text-7xl font-normal leading-tight">
+				Modern,<br />
+				environmentally <br class="hidden md:block" />
+				conscious homes.
+			</h1>
+		</main>
 
-    <!-- Menu -->
-    <nav class="menu z-40 fixed top-0 right-[-100%] w-full h-full bg-black text-white flex flex-col justify-center items-end pr-6 transition-all duration-500 ease-in-out" id="menu">
-        <div class="text-4xl font-bold mb-6 cursor-pointer absolute top-4 right-4" onclick="toggleMenu()">&times;</div>
-        <ul class="text-2xl space-y-4 text-right md:text-5xl md:space-y-8">
-            <li class="cursor-pointer">North of TO</li>
-            <li class="cursor-pointer">East of LA</li>
-            <li class="cursor-pointer">Process</li>
-            <li class="cursor-pointer">About</li>
-            <li class="cursor-pointer">Contact</li>
-        </ul>
-    </nav>
+		<!-- Slideshow avec un cadre fixe -->
+		<div
+			class="w-full md:w-2/3 h-64 md:h-[40rem] flex justify-center items-center bg-gray-200 ml-auto"
+		>
+			<div class="slideshow w-full h-full relative overflow-hidden">
+				<img
+					src="https://images.unsplash.com/photo-1742943679519-bb9eb364b152?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D"
+					class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out active"
+				/>
+				<img
+					src="https://images.unsplash.com/photo-1742944085736-65d142cef76d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D"
+					class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out"
+				/>
+				<img
+					src="https://images.unsplash.com/photo-1742736826216-417a86b261e8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D"
+					class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out"
+				/>
+			</div>
+		</div>
 
-    <!-- Main Content -->
-    <main class="px-6 md:px-20 lg:px-32 py-16 md:py-24 text-center md:text-left">
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-            Modern, environmentally <br class="hidden md:block"> conscious homes.
-        </h1>
-    </main>
+		<script>
+			function toggleMenu() {
+				const menu = document.getElementById("menu");
+				const burger = document.querySelector(".burger");
+				menu.classList.toggle("right-0");
+				burger.classList.toggle("open");
+			}
 
-    <!-- Slideshow avec un cadre fixe -->
-    <div class="w-full md:w-2/3 h-64 md:h-96 flex justify-center items-center bg-gray-200 ml-auto">
-        <div class="slideshow w-full h-full relative overflow-hidden">
-            <img src="https://plus.unsplash.com/premium_photo-1742945845688-d2e666a3b92a?w=500&auto=format&fit=crop&q=60" class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out active">
-            <img src="https://images.unsplash.com/photo-1743044090376-f770fee7e859?w=500&auto=format&fit=crop&q=60" class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out">
-            <img src="https://images.unsplash.com/photo-1742268350465-35d7baae61fa?w=500&auto=format&fit=crop&q=60" class="absolute w-[110%] h-[110%] object-cover top-[-5%] left-[-5%] opacity-0 transition-opacity duration-1000 ease-in-out">
-        </div>
-    </div>
+			// Gestion du slideshow
+			const images = document.querySelectorAll(".slideshow img");
+			let index = 0;
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("right-0");
-        }
+			function changeImage() {
+				images[index].classList.remove("opacity-100");
+				images[index].classList.add("opacity-0");
+				index = (index + 1) % images.length;
+				images[index].classList.remove("opacity-0");
+				images[index].classList.add("opacity-100");
+			}
 
-        // Gestion du slideshow
-        const images = document.querySelectorAll('.slideshow img');
-        let index = 0;
+			window.addEventListener("scroll", () => {
+				const logo = document.querySelector(".logo");
+				const scrollThreshold = 200;
+				const opacityValue = Math.max(
+					0,
+					1 - window.scrollY / scrollThreshold
+				);
 
-        function changeImage() {
-            images[index].classList.remove('opacity-100');
-            images[index].classList.add('opacity-0');
-            index = (index + 1) % images.length;
-            images[index].classList.remove('opacity-0');
-            images[index].classList.add('opacity-100');
-        }
+				logo.style.opacity = opacityValue;
+			});
 
-        setInterval(changeImage, 5000);
-    </script>
-
-</body>
+			setInterval(changeImage, 5000);
+		</script>
+	</body>
 </html>

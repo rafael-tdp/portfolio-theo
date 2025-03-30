@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Animation du menu burger */
+.burger div {
+	transition: all 0.3s ease-in-out;
+}
+
+.burger.open div:first-child {
+	transform: rotate(45deg) translateY(8px);
+}
+.burger.open div:last-child {
+	transform: rotate(-45deg) translateY(-8px);
+}
+.burger.open div:nth-child(2) {
+	/* transform: scaleX(2); */
+	transform: rotate(-45deg) translateX(-7px) translateY(-7px) scaleX(1.5);
+}
+.burger.open div {
+	background-color: white;
+}
+
+@media (min-width: 768px) { /* md */
+    .burger.open div:first-child {
+        transform: rotate(45deg) translateY(10px) translateX(5px);
+    }
+    .burger.open div:last-child {
+        transform: rotate(-45deg) translateY(-10px) translateX(5px);
+    }
+    .burger.open div:nth-child(2) {
+        transform: rotate(-45deg) translateX(-6px) translateY(-12px) scaleX(1.5);
+    }
+}
+
+/* Animation de déplacement doux */
+@keyframes moveImage {
+	0% {
+		transform: translateX(0) scale(1.1);
+	}
+	50% {
+		transform: translateX(-5px) scale(1.1);
+	}
+	100% {
+		transform: translateX(5px) scale(1.1);
+	}
+}
+
+.slideshow img {
+	animation: moveImage 6s infinite alternate ease-in-out;
+}
+
+
+/* Transition pour afficher le menu */
+.menu {
+	transition: right 0.5s ease-in-out;
+	z-index: 10; /* Assure que le menu est en dessous de la croix */
+}
+.menu.right-0 {
+	right: 0; /* Affiche le menu */
+}
+.menu {
+	right: -100%; /* Cache le menu en dehors de l'écran */
+}
+
+/* Positionnement de la croix au-dessus du menu */
+.close-btn {
+	position: absolute;
+	top: 4rem;
+	right: 2rem;
+	font-size: 2.5rem;
+	color: white;
+	cursor: pointer;
+	z-index: 20; /* Assure que la croix est au-dessus du menu */
+}
+
+/* Style de la croix quand le menu est ouvert */
+.burger.open .close-btn {
+	display: block; /* Affiche la croix quand le menu est ouvert */
+}
