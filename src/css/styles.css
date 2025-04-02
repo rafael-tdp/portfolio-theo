@@ -21,8 +21,8 @@
 
 @font-face {
 	font-family: "Leonore";
-	src: url("./public/fonts/leonore.woff2") format("woff2"),
-		url("./public/fonts/leonore.woff") format("woff");
+	src: url("../../public/fonts/leonore.woff2") format("woff2"),
+		url("../../public/fonts/leonore.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }

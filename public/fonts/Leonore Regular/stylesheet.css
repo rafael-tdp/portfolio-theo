@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Leonore';
-    src: url('Leonore-Regular.woff2') format('woff2'),
-        url('Leonore-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
