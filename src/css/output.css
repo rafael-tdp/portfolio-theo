@@ -235,9 +235,6 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .my-20 {
-    margin-block: calc(var(--spacing) * 20);
-  }
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
@@ -255,9 +252,6 @@
   }
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
-  }
-  .mb-20 {
-    margin-bottom: calc(var(--spacing) * 20);
   }
   .ml-auto {
     margin-left: auto;
@@ -529,11 +523,6 @@
       }
     }
   }
-  .md\:my-32 {
-    @media (width >= 48rem) {
-      margin-block: calc(var(--spacing) * 32);
-    }
-  }
   .md\:mt-32 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 32);
@@ -652,11 +641,6 @@
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
-  .lg\:my-40 {
-    @media (width >= 64rem) {
-      margin-block: calc(var(--spacing) * 40);
-    }
-  }
   .lg\:px-26 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 26);
@@ -696,7 +680,7 @@
 }
 @font-face {
   font-family: "Leonore";
-  src: url("/public/fonts/leonore.woff2") format("woff2"),	url("/public/fonts/leonore.woff") format("woff");
+  src: url("./public/fonts/leonore.woff2") format("woff2"),	url("./public/fonts/leonore.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
