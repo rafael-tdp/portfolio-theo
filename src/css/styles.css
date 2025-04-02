@@ -12,12 +12,11 @@
 	transform: rotate(-45deg) translateY(-8px);
 }
 .burger.open div:nth-child(2) {
-	/* transform: scaleX(2); */
 	transform: rotate(-45deg) translateX(-7px) translateY(-7px) scaleX(1.5);
 }
-.burger.open div {
+/* .burger.open div {
 	background-color: white;
-}
+} */
 
 @font-face {
 	font-family: "Leonore";
@@ -60,13 +59,13 @@
 /* Transition pour afficher le menu */
 .menu {
 	transition: right 0.5s ease-in-out;
-	z-index: 10; /* Assure que le menu est en dessous de la croix */
+	z-index: 10;
 }
 .menu.right-0 {
-	right: 0; /* Affiche le menu */
+	right: 0;
 }
 .menu {
-	right: -100%; /* Cache le menu en dehors de l'écran */
+	right: -100%;
 }
 
 /* Positionnement de la croix au-dessus du menu */
@@ -77,10 +76,63 @@
 	font-size: 2.5rem;
 	color: white;
 	cursor: pointer;
-	z-index: 20; /* Assure que la croix est au-dessus du menu */
+	z-index: 20;
 }
 
-/* Style de la croix quand le menu est ouvert */
 .burger.open .close-btn {
-	display: block; /* Affiche la croix quand le menu est ouvert */
+	display: block;
+}
+
+.project img {
+	transition: transform 0.3s ease-in-out;
+}
+
+.project:hover img {
+	transform: translateX(-20px);
+}
+
+.project p.title::after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 1.5px;
+	background-color: black;
+	margin-top: 3px;
+}
+
+.project p.title {
+	width: fit-content;
+}
+
+.project:hover p::after {
+	width: 100%;
+	transition: width 0.5s;
+}
+
+nav ul li a {
+	font-family: "Leonore", sans-serif;
+	width: fit-content;
+	display: inline-block;
+	position: relative;
+}
+
+nav ul li a::after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 1.5px;
+	background-color: white;
+	margin-top: 3px;
+	position: absolute;
+	right: 0;
+	bottom: -10px;
+}
+
+.about nav ul li a::after {
+    background-color: black;
+}
+
+nav ul li a:hover::after {
+	width: 100%;
+	transition: width 0.5s;
 }
