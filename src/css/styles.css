@@ -19,16 +19,25 @@
 	background-color: white;
 }
 
-@media (min-width: 768px) { /* md */
-    .burger.open div:first-child {
-        transform: rotate(45deg) translateY(10px) translateX(5px);
-    }
-    .burger.open div:last-child {
-        transform: rotate(-45deg) translateY(-10px) translateX(5px);
-    }
-    .burger.open div:nth-child(2) {
-        transform: rotate(-45deg) translateX(-6px) translateY(-12px) scaleX(1.5);
-    }
+@font-face {
+	font-family: "Leonore";
+	src: url("/public/fonts/leonore.woff2") format("woff2"),
+		url("/public/fonts/leonore.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@media (min-width: 768px) {
+	/* md */
+	.burger.open div:first-child {
+		transform: rotate(45deg) translateY(10px) translateX(5px);
+	}
+	.burger.open div:last-child {
+		transform: rotate(-45deg) translateY(-10px) translateX(5px);
+	}
+	.burger.open div:nth-child(2) {
+		transform: rotate(-45deg) translateX(-6px) translateY(-12px) scaleX(1.5);
+	}
 }
 
 /* Animation de déplacement doux */
@@ -47,7 +56,6 @@
 .slideshow img {
 	animation: moveImage 6s infinite alternate ease-in-out;
 }
-
 
 /* Transition pour afficher le menu */
 .menu {
